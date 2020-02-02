@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Tile_State : MonoBehaviour
 {
-    GameObject player;
-
+    public GameObject FloatingTextPrefab;
     private int state = 0;
     public Sprite seeded;
     public Sprite grown;
@@ -31,8 +30,34 @@ public class Tile_State : MonoBehaviour
             spr.enabled = true;
             spr.sprite = grown;
         }
+        else if (state == 0 && !haveSeeds)
+        {
+            //Trigger need Seeds text
+            if (FloatingTextPrefab)
+            {
+                ShowFloatingText();
+            }
+        }
+        else if (state == 1 && !haveCan)
+        {
+            //Trigger need Can text
+            if (FloatingTextPrefab)
+            {
+                ShowFloatingText();
+            }
+        }
+
+    }
+
+    public void ShowFloatingText()
+    {
+        Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+
     }
 
 }
+
+
+
 
 
