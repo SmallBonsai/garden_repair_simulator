@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
+    public GameObject TextBoxController;
+
     public Rigidbody2D rb;
     public Animator animator;
     public GameObject curColliding;
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 haveSeeds = true;
                 haveCan = false;
+                TextBoxController.GetComponent<TextBoxController>().DisableBox();
                 Debug.Log("You got Seeds");
             }
             else if (curColliding.gameObject.tag == "Shed" && !haveCan)
@@ -43,6 +46,17 @@ public class PlayerMovement : MonoBehaviour
             else if (haveCan || haveSeeds){
                 curColliding.gameObject.GetComponent<Tile_State>().changeTile(haveSeeds, haveCan);
                 Debug.Log("button pressed");
+            }
+
+            if(curColliding.gameObject.tag == "Tile"){
+                int curState = curColliding.GetComponent<Tile_State>().GetState();
+                if ( curState == 0 && !haveSeeds) {
+                    TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                }
+                if (curState == 1 && !haveCan) {
+                    TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                }
+
             }
         }
     }
@@ -63,8 +77,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Left box");
-        curColliding = other.gameObject;
         canAction = false;
+        Debug.Log("box");
+
     }
 }

@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 412318d3c26a449e5b2144b53ea0ece5
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Plant_Tiles_0
+    21300002: Plant_Tiles_1
+    21300004: Plant_Tiles_2
+    21300006: Plant_Tiles_3
+    21300008: Plant_Tiles_4
+    21300010: Plant_Tiles_5
+    21300012: Plant_Tiles_6
+    21300014: Plant_Tiles_7
+    21300016: Plant_Tiles_8
+    21300018: Plant_Tiles_9
+    21300020: Plant_Tiles_10
+    21300022: Plant_Tiles_11
+    21300024: Plant_Tiles_12
+    21300026: Plant_Tiles_13
+    21300028: Plant_Tiles_14
+    21300030: Plant_Tiles_15
+    21300032: Plant_Tiles_16
+    21300034: Plant_Tiles_17
+    21300036: Plant_Tiles_18
+    21300038: Plant_Tiles_19
+    21300040: Plant_Tiles_20
+    21300042: Plant_Tiles_21
+    21300044: Plant_Tiles_22
+    21300046: Plant_Tiles_23
+    21300048: Plant_Tiles_24
+    21300050: Plant_Tiles_25
+    21300052: Plant_Tiles_26
+    21300054: Plant_Tiles_27
+    21300056: Plant_Tiles_28
+    21300058: Plant_Tiles_29
+    21300060: Plant_Tiles_30
+    21300062: Plant_Tiles_31
+    21300064: Plant_Tiles_32
+    21300066: Plant_Tiles_33
+    21300068: Plant_Tiles_34
+    21300070: Plant_Tiles_35
+    21300072: Plant_Tiles_36
+    21300074: Plant_Tiles_37
+    21300076: Plant_Tiles_38
+    21300078: Plant_Tiles_39
+    21300080: Plant_Tiles_40
+    21300082: Tree_Tiles_0
+    21300084: Tree_Tiles_1
+    21300086: Tree_Tiles_2
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tree_Tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4063e405e174f27ab8fafb030b1473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73db672caa6794032a6e32344d77b76b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ac421fb93f9424cba72bd26e537fb6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: dcff264a993e54434b60f3b907ff6751
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
