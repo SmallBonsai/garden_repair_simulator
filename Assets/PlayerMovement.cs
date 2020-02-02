@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    public List<GameObject> tiles;
+    public GameObject curColliding;
+    public bool haveSeeds = false;
+    public bool haveCan = false;
 
     private bool canAction = false;
 
@@ -26,9 +28,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("space") && canAction)
         {
-            for (int i = 0; i < tiles.Count; i++)
+            if (curColliding.gameObject.tag == "Shed" && !haveSeeds)
             {
-                tiles[i].gameObject.GetComponent<Tile_State>().changeTile();
+                haveSeeds = true;
+                haveCan = false;
+                Debug.Log("You got Seeds");
+            }
+            else if (curColliding.gameObject.tag == "Shed" && !haveCan)
+            {
+                haveCan = true;
+                haveSeeds = false;
+                Debug.Log("You got a Can");
+            }
+            else if (haveCan || haveSeeds){
+                curColliding.gameObject.GetComponent<Tile_State>().changeTile(haveSeeds, haveCan);
                 Debug.Log("button pressed");
             }
         }
@@ -43,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("you can press a button!");
         canAction = true;
-        tiles.Add(other.gameObject);
+        curColliding = other.gameObject;
 
         Debug.Log("collision occurred");
     }
@@ -51,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("Left box");
-        tiles.Remove(other.gameObject);
+        curColliding = other.gameObject;
         canAction = false;
     }
 }
