@@ -814,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  TextBoxController: {fileID: 0}
   rb: {fileID: 357788397}
   animator: {fileID: 357788398}
   curColliding: {fileID: 0}

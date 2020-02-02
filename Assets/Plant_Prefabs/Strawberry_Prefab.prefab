@@ -120,6 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextBoxController: {fileID: 0}
-  seeded: {fileID: 21300000, guid: 0b8818a4cb75b45ea92abda97e8d9e8e, type: 3}
-  grown: {fileID: 21300002, guid: 0b8818a4cb75b45ea92abda97e8d9e8e, type: 3}
+  seeded: {fileID: 21300020, guid: 0b8818a4cb75b45ea92abda97e8d9e8e, type: 3}
+  grown: {fileID: 21300022, guid: 0b8818a4cb75b45ea92abda97e8d9e8e, type: 3}
   spr: {fileID: 129265406066228813}
