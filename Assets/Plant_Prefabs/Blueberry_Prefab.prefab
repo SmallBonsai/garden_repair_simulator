@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 129265406066228813}
   - component: {fileID: 129265406066228812}
   - component: {fileID: 129265406066228815}
+  - component: {fileID: 393836942295682023}
   m_Layer: 0
   m_Name: Blueberry_Prefab
   m_TagString: Tile
@@ -124,3 +125,22 @@ MonoBehaviour:
   seeded: {fileID: 21300016, guid: 0b8818a4cb75b45ea92abda97e8d9e8e, type: 3}
   grown: {fileID: 21300018, guid: 0b8818a4cb75b45ea92abda97e8d9e8e, type: 3}
   spr: {fileID: 129265406066228813}
+--- !u!95 &393836942295682023
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129265406066228802}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79f21c2a538934cbcb717fe970989a3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

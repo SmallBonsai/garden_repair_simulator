@@ -9,6 +9,11 @@ public class Tile_State : MonoBehaviour
     public Sprite seeded;
     public Sprite grown;
     public SpriteRenderer spr;
+    public Animator anim;
+
+    private float timer = 0.5f;
+    private bool changeStateOut;
+    private bool changeStateIn;
 
 
     public void Start()
@@ -22,6 +27,7 @@ public class Tile_State : MonoBehaviour
         {
             this.state = 1;
             spr.enabled = true;
+            this.changeStateOut = true;
             spr.sprite = seeded;
         }
         else if (this.state == 1 && haveCan)
@@ -35,6 +41,15 @@ public class Tile_State : MonoBehaviour
 
     public int GetState(){
         return this.state;
+    }
+
+    public void Update()
+    {
+        timer -= Time.deltaTime;
+
+        if (this.changeStateOut) {
+            this.anim.SetBool
+        }
     }
 
 
