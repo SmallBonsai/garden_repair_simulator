@@ -31,7 +31,7 @@ public class TextBoxController : MonoBehaviour
     }
 
     public void DisableBox(){
-        position.y = -650;
+        position.y = -800;
     }
 
     public void setText(string str){

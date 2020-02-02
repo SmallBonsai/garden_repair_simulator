@@ -129,6 +129,7 @@ MonoBehaviour:
   water: {fileID: 8300000, guid: 4b5eac9dd5a2a480984765df842ed0a1, type: 3}
   growing: {fileID: 8300000, guid: 80ece368264bd409eb8e6a8925ac33dd, type: 3}
   plant: {fileID: 8300000, guid: 630a992c27a8f4a8f8c1b44bfc0670cc, type: 3}
+  type: pumpkin
 --- !u!95 &3556201522402323243
 Animator:
   serializedVersion: 3

@@ -14,6 +14,8 @@ public class Tile_State : MonoBehaviour
     public AudioClip growing;
     public AudioClip plant;
 
+    public string type;
+
     private Sprite current;
     private float growTimer = 5.0f;
     private float sprTransitionTimer = 0.5f;
@@ -64,6 +66,47 @@ public class Tile_State : MonoBehaviour
             sprTransitionTimer = 0.5f;
             this.state = 3;
             ads.PlayOneShot(growing);
+
+            GameObject[] canvas = GameObject.FindGameObjectsWithTag("Canvas");
+            switch (type) {
+                case "carrot":
+                    if (canvas.Length == 1)
+                    {
+                        canvas[0].GetComponent<Progression>().carrotsInc();
+                    }
+                    break;
+                case "strawberry":
+                    if (canvas.Length == 1)
+                    {
+                        canvas[0].GetComponent<Progression>().strawberriesInc();
+                    }
+                    break;
+                case "blueberry":
+                    if (canvas.Length == 1)
+                    {
+                        canvas[0].GetComponent<Progression>().blueberriesInc();
+                    }
+                    break;
+                case "pepper":
+                    if (canvas.Length == 1)
+                    {
+                        canvas[0].GetComponent<Progression>().peppersInc();
+                    }
+                    break;
+                case "melon":
+                    if (canvas.Length == 1)
+                    {
+                        canvas[0].GetComponent<Progression>().watermelonsInc();
+                    }
+                    break;
+                case "pumpkin":
+                    if (canvas.Length == 1)
+                    {
+                        canvas[0].GetComponent<Progression>().pumpkinsInc();
+                    }
+                    break;
+
+            }
         }
 
         if (sprTransitionTimer <= 0) {
