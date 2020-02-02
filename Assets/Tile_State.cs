@@ -17,24 +17,19 @@ public class Tile_State : MonoBehaviour
         spr.enabled = false;
     }
 
-    public void changeTile()
+    public void changeTile(bool haveSeeds, bool haveCan)
     {
-        if (this.state == 0)
+        if (this.state == 0 && haveSeeds) // && have seeds
         {
             this.state = 1;
             spr.enabled = true;
             spr.sprite = seeded;
         }
-        else if (this.state == 1)
+        else if (this.state == 1 && haveCan)
         {
             this.state = 2;
             spr.enabled = true;
             spr.sprite = grown;
-        }
-        else if (this.state == 2)
-        {
-            this.state = 0;
-            spr.enabled = false;
         }
     }
 
