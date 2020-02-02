@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tile
   - Shed
+  - Tree
+  - Canvas
   layers:
   - Default
   - TransparentFX

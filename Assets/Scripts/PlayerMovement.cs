@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject curColliding;
     public bool haveSeeds = false;
     public bool haveCan = false;
+    public AudioSource ads;
+    public AudioClip shed;
 
     private bool canAction = false;
 
@@ -41,21 +43,25 @@ public class PlayerMovement : MonoBehaviour
         {
             position.x += 1;
             timer = 0.5f;
+            TextBoxController.GetComponent<TextBoxController>().DisableBox();
         }
         else if ((pastMovement.x >= 0 || timer < 0.0f) && movement.x < 0)
         {
             position.x -= 1;
             timer = 0.5f;
+            TextBoxController.GetComponent<TextBoxController>().DisableBox();
         }
         else if ((pastMovement.y <= 0 || timer < 0.0f) && movement.y > 0)
         {
             position.y += 1;
             timer = 0.5f;
+            TextBoxController.GetComponent<TextBoxController>().DisableBox();
         }
         else if ((pastMovement.y >= 0 || timer < 0.0f) && movement.y < 0)
         {
             position.y -= 1;
             timer = 0.5f;
+            TextBoxController.GetComponent<TextBoxController>().DisableBox();
         }
 
         this.transform.position = Vector2.Lerp(this.transform.position, position, 0.5f);
@@ -66,54 +72,62 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("space") && canAction)
         {
-            if (curColliding.gameObject.tag == "Shed" && !haveSeeds)
-            {
-                haveSeeds = true;
-                haveCan = false;
-                TextBoxController.GetComponent<TextBoxController>().DisableBox();
-                Debug.Log("You got Seeds");
-            }
-            else if (curColliding.gameObject.tag == "Shed" && !haveCan)
-            {
-                haveCan = true;
-                haveSeeds = false;
-                Debug.Log("You got a Can");
-            }
-            else if (haveCan || haveSeeds)
-            {
-                curColliding.gameObject.GetComponent<Tile_State>().changeTile(haveSeeds, haveCan);
-                Debug.Log("button pressed");
-            }
-
             if (curColliding.gameObject.tag == "Tile")
             {
                 int curState = curColliding.GetComponent<Tile_State>().GetState();
                 if (curState == 0 && !haveSeeds)
                 {
                     TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                    TextBoxController.GetComponent<TextBoxController>().setText("I need seeds from the shed!");
                 }
-                if (curState == 1 && !haveCan)
+                else if (curState == 1 && !haveCan)
                 {
                     TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                    TextBoxController.GetComponent<TextBoxController>().setText("I need water from the shed!");
                 }
 
+            } else if(curColliding.gameObject.tag == "Tree") {
+                int curState = curColliding.GetComponent<Tree_State>().GetState();
+                if ((curState == 0 || curState == 2) && !haveCan) {
+                    TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                    TextBoxController.GetComponent<TextBoxController>().setText("I need water from the shed!");
+                }
+            }
+
+            if (curColliding.gameObject.tag == "Shed" && !haveSeeds)
+            {
+                haveSeeds = true;
+                haveCan = false;
+                TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                TextBoxController.GetComponent<TextBoxController>().setText("I got some seeds!");
+                ads.PlayOneShot(shed);
+            }
+            else if (curColliding.gameObject.tag == "Shed" && !haveCan)
+            {
+                haveCan = true;
+                haveSeeds = false;
+                TextBoxController.GetComponent<TextBoxController>().EnableBox();
+                TextBoxController.GetComponent<TextBoxController>().setText("I got a watering can!");
+                ads.PlayOneShot(shed);
+            }
+            else if (haveCan || haveSeeds)
+            {
+                if (curColliding.gameObject.tag == "Tile")
+                    curColliding.gameObject.GetComponent<Tile_State>().changeTile(haveSeeds, haveCan);
+                if (curColliding.gameObject.tag == "Tree")
+                    curColliding.gameObject.GetComponent<Tree_State>().changeTree(haveCan);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("you can press a button!");
         canAction = true;
         curColliding = other.gameObject;
-
-        Debug.Log("collision occurred");
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         canAction = false;
-        Debug.Log("box");
-
     }
 }
