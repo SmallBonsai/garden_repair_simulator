@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tile_State : MonoBehaviour
 {
+    GameObject player;
 
     private int state = 0;
     public Sprite seeded;
@@ -11,19 +12,32 @@ public class Tile_State : MonoBehaviour
     public SpriteRenderer spr;
 
 
-    public void seed() {
-        if (state == 0)
+    public void Start()
+    {
+        spr.enabled = false;
+    }
+
+    public void changeTile()
+    {
+        if (this.state == 0)
         {
             this.state = 1;
+            spr.enabled = true;
             spr.sprite = seeded;
+        }
+        else if (this.state == 1)
+        {
+            this.state = 2;
+            spr.enabled = true;
+            spr.sprite = grown;
+        }
+        else if (this.state == 2)
+        {
+            this.state = 0;
+            spr.enabled = false;
         }
     }
 
-    public void grow() {
-        if (state == 1)
-        {
-            this.state = 2;
-            spr.sprite = grown;
-        }
-    }
 }
+
+
